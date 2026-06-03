@@ -1,0 +1,116 @@
+{
+  "store": "Northwind Outdoors",
+  "currency": "USD",
+  "products": [
+    {
+      "sku": "TENT-2P-ULT",
+      "name": "Ultralight 2-Person Backpacking Tent",
+      "category": "Camping",
+      "price": 289.0,
+      "in_stock": true,
+      "weight_kg": 1.2,
+      "description": "Freestanding double-wall tent for two. 1.2 kg packed weight, 3-season rating, taped seams, aluminum DAC poles. Packs to 38 x 12 cm.",
+      "warranty_years": 2,
+      "tags": ["tent", "backpacking", "camping", "shelter", "lightweight", "3-season"]
+    },
+    {
+      "sku": "BAG-DOWN-0C",
+      "name": "Down Sleeping Bag (0°C / 32°F)",
+      "category": "Camping",
+      "price": 219.0,
+      "in_stock": true,
+      "weight_kg": 0.9,
+      "description": "650 fill-power responsibly-sourced down sleeping bag rated to 0°C comfort. Mummy cut, draft collar, water-resistant shell. Compresses to 7 L.",
+      "warranty_years": 2,
+      "tags": ["sleeping bag", "down", "camping", "0c", "warm", "mummy"]
+    },
+    {
+      "sku": "STOVE-CAN-01",
+      "name": "Canister Camp Stove",
+      "category": "Cooking",
+      "price": 49.0,
+      "in_stock": true,
+      "weight_kg": 0.075,
+      "description": "75 g titanium screw-on canister stove. Boils 1 L in 3.5 minutes. Piezo ignition, adjustable simmer. Fuel canister sold separately.",
+      "warranty_years": 1,
+      "tags": ["stove", "cooking", "camping", "titanium", "canister"]
+    },
+    {
+      "sku": "FILTER-SQ-01",
+      "name": "Squeeze Water Filter",
+      "category": "Hydration",
+      "price": 39.0,
+      "in_stock": true,
+      "weight_kg": 0.085,
+      "description": "Hollow-fiber squeeze filter, 0.1 micron, removes bacteria and protozoa. 100,000 L lifespan with backflushing. Includes 1 L pouch.",
+      "warranty_years": 1,
+      "tags": ["water", "filter", "hydration", "backpacking", "purification"]
+    },
+    {
+      "sku": "JACKET-RAIN-M",
+      "name": "Waterproof Rain Jacket (Men's)",
+      "category": "Apparel",
+      "price": 159.0,
+      "in_stock": true,
+      "weight_kg": 0.32,
+      "description": "2.5-layer waterproof-breathable shell, 20k/20k rating, fully seam-sealed, pit zips, adjustable hood. Packs into its own pocket.",
+      "warranty_years": 2,
+      "tags": ["jacket", "rain", "apparel", "waterproof", "shell", "mens"]
+    },
+    {
+      "sku": "JACKET-RAIN-W",
+      "name": "Waterproof Rain Jacket (Women's)",
+      "category": "Apparel",
+      "price": 159.0,
+      "in_stock": false,
+      "weight_kg": 0.29,
+      "description": "Women's 2.5-layer waterproof-breathable shell, 20k/20k rating, fully seam-sealed, pit zips, adjustable hood. Packs into its own pocket.",
+      "warranty_years": 2,
+      "tags": ["jacket", "rain", "apparel", "waterproof", "shell", "womens"]
+    },
+    {
+      "sku": "BOOT-HIKE-01",
+      "name": "Mid-Cut Hiking Boots",
+      "category": "Footwear",
+      "price": 179.0,
+      "in_stock": true,
+      "weight_kg": 0.9,
+      "description": "Waterproof leather/mesh mid-cut hiking boots with Vibram outsole and EVA midsole. Supportive collar for loaded packs. True to size.",
+      "warranty_years": 1,
+      "tags": ["boots", "footwear", "hiking", "waterproof", "vibram"]
+    },
+    {
+      "sku": "PACK-50L-01",
+      "name": "50L Backpacking Pack",
+      "category": "Packs",
+      "price": 199.0,
+      "in_stock": true,
+      "weight_kg": 1.5,
+      "description": "50-liter internal-frame pack with adjustable torso, ventilated back panel, hip-belt pockets, and rain cover included. Carries up to 18 kg comfortably.",
+      "warranty_years": 3,
+      "tags": ["backpack", "pack", "50l", "backpacking", "frame"]
+    },
+    {
+      "sku": "HEADLAMP-01",
+      "name": "Rechargeable Headlamp",
+      "category": "Lighting",
+      "price": 44.0,
+      "in_stock": true,
+      "weight_kg": 0.09,
+      "description": "USB-C rechargeable headlamp, 400 lumens max, red night mode, IPX4 water resistance, up to 40 h runtime on low. Lock mode for travel.",
+      "warranty_years": 1,
+      "tags": ["headlamp", "lighting", "rechargeable", "usb-c", "400 lumens"]
+    },
+    {
+      "sku": "PAD-INS-01",
+      "name": "Insulated Sleeping Pad",
+      "category": "Camping",
+      "price": 129.0,
+      "in_stock": true,
+      "weight_kg": 0.45,
+      "description": "Inflatable insulated sleeping pad, R-value 4.2, 6 cm thick, 450 g. Includes inflation sack and patch kit. Packs to the size of a 1 L bottle.",
+      "warranty_years": 2,
+      "tags": ["sleeping pad", "pad", "camping", "insulated", "inflatable"]
+    }
+  ]
+}

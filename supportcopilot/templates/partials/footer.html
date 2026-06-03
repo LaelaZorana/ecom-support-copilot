@@ -1,0 +1,26 @@
+<footer class="mt-16 border-t border-slate-200/70 dark:border-slate-800/70">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-sm text-slate-500 dark:text-slate-400">
+      <div class="flex flex-col gap-1">
+        <p class="font-medium text-slate-600 dark:text-slate-300">
+          Built by <span class="font-semibold text-slate-800 dark:text-slate-100">Laela Zorana</span>
+        </p>
+        <p>Northwind Outdoors demo store · vertical-swappable support automation.</p>
+      </div>
+      <div class="flex flex-wrap items-center gap-3">
+        {% if provider %}
+        <span class="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/60 px-2.5 py-1 text-xs font-medium dark:border-slate-800 dark:bg-slate-900/40">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+          {% if provider == 'stub' %}Offline stub{% else %}{{ provider }}{% endif %}
+        </span>
+        {% endif %}
+        {% if backend %}
+        <span class="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/60 px-2.5 py-1 text-xs font-medium dark:border-slate-800 dark:bg-slate-900/40">
+          Retrieval: {{ backend }}
+        </span>
+        {% endif %}
+        <a class="font-medium text-brand-600 hover:underline dark:text-brand-400" href="https://github.com/LaelaZorana/ecom-support-copilot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>

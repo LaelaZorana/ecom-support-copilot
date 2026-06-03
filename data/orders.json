@@ -1,0 +1,89 @@
+{
+  "orders": [
+    {
+      "order_id": "NW-1001",
+      "email": "alex@example.com",
+      "status": "delivered",
+      "placed_at": "2026-05-10",
+      "delivered_at": "2026-05-15",
+      "carrier": "UPS",
+      "tracking": "1Z999AA10123456784",
+      "items": [
+        {"sku": "TENT-2P-ULT", "name": "Ultralight 2-Person Backpacking Tent", "qty": 1, "price": 289.0}
+      ],
+      "total": 289.0,
+      "final_sale": false
+    },
+    {
+      "order_id": "NW-1002",
+      "email": "jordan@example.com",
+      "status": "shipped",
+      "placed_at": "2026-05-28",
+      "delivered_at": null,
+      "carrier": "USPS",
+      "tracking": "9400110200793123456781",
+      "items": [
+        {"sku": "JACKET-RAIN-M", "name": "Waterproof Rain Jacket (Men's)", "qty": 1, "price": 159.0},
+        {"sku": "HEADLAMP-01", "name": "Rechargeable Headlamp", "qty": 1, "price": 44.0}
+      ],
+      "total": 203.0,
+      "final_sale": false
+    },
+    {
+      "order_id": "NW-1003",
+      "email": "sam@example.com",
+      "status": "processing",
+      "placed_at": "2026-06-02",
+      "delivered_at": null,
+      "carrier": null,
+      "tracking": null,
+      "items": [
+        {"sku": "BAG-DOWN-0C", "name": "Down Sleeping Bag (0°C / 32°F)", "qty": 1, "price": 219.0}
+      ],
+      "total": 219.0,
+      "final_sale": false
+    },
+    {
+      "order_id": "NW-1004",
+      "email": "casey@example.com",
+      "status": "delivered",
+      "placed_at": "2026-03-30",
+      "delivered_at": "2026-04-04",
+      "carrier": "UPS",
+      "tracking": "1Z999AA10198765432",
+      "items": [
+        {"sku": "BOOT-HIKE-01", "name": "Mid-Cut Hiking Boots", "qty": 1, "price": 179.0}
+      ],
+      "total": 179.0,
+      "final_sale": false
+    },
+    {
+      "order_id": "NW-1005",
+      "email": "riley@example.com",
+      "status": "delivered",
+      "placed_at": "2026-05-20",
+      "delivered_at": "2026-05-24",
+      "carrier": "FedEx",
+      "tracking": "771234567890",
+      "items": [
+        {"sku": "FILTER-SQ-01", "name": "Squeeze Water Filter", "qty": 2, "price": 39.0}
+      ],
+      "total": 78.0,
+      "final_sale": true
+    },
+    {
+      "order_id": "NW-1006",
+      "email": "morgan@example.com",
+      "status": "cancelled",
+      "placed_at": "2026-05-26",
+      "delivered_at": null,
+      "carrier": null,
+      "tracking": null,
+      "items": [
+        {"sku": "PACK-50L-01", "name": "50L Backpacking Pack", "qty": 1, "price": 199.0}
+      ],
+      "total": 199.0,
+      "final_sale": false
+    }
+  ]
+}

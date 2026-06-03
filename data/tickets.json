@@ -1,0 +1,27 @@
+{
+  "_comment": "Seeded historical support tickets used to compute the ROI dashboard. baseline_handle_time_min is the average minutes a human agent spent per ticket before automation (industry-typical for e-commerce tier-1). The copilot replays each ticket; whichever it resolves without escalation counts toward the deflection rate and time saved.",
+  "baseline_handle_time_min": 7.0,
+  "agent_loaded_cost_per_hour": 28.0,
+  "tickets": [
+    {"id": "T-001", "channel": "email", "order_id": "NW-1002", "email": "jordan@example.com", "message": "Where is my order? Can I get a tracking number?"},
+    {"id": "T-002", "channel": "chat", "order_id": null, "email": null, "message": "What is your return policy for unused items?"},
+    {"id": "T-003", "channel": "chat", "order_id": null, "email": null, "message": "How long does standard shipping take and is it free?"},
+    {"id": "T-004", "channel": "email", "order_id": "NW-1001", "email": "alex@example.com", "message": "I'd like to return my tent, it's unused with tags. How do I start a refund?"},
+    {"id": "T-005", "channel": "chat", "order_id": null, "email": null, "message": "Do you have an ultralight tent for two people, and how much does it weigh?"},
+    {"id": "T-006", "channel": "email", "order_id": "NW-1005", "email": "riley@example.com", "message": "I want to return the water filters I bought, please refund me."},
+    {"id": "T-007", "channel": "chat", "order_id": null, "email": null, "message": "Is the women's rain jacket in stock?"},
+    {"id": "T-008", "channel": "email", "order_id": "NW-1003", "email": "sam@example.com", "message": "What's the status of my sleeping bag order?"},
+    {"id": "T-009", "channel": "chat", "order_id": null, "email": null, "message": "What warranty comes with the backpacking pack?"},
+    {"id": "T-010", "channel": "email", "order_id": "NW-1004", "email": "casey@example.com", "message": "My hiking boots arrived with a split sole after one wear, this looks like a defect. What can you do?"},
+    {"id": "T-011", "channel": "chat", "order_id": null, "email": null, "message": "Can I get a 2-day expedited shipping price?"},
+    {"id": "T-012", "channel": "email", "order_id": "NW-1006", "email": "morgan@example.com", "message": "Did my backpack order get cancelled? I don't see a charge."},
+    {"id": "T-013", "channel": "chat", "order_id": null, "email": null, "message": "Do you price match if I find the headlamp cheaper somewhere else?"},
+    {"id": "T-014", "channel": "email", "order_id": "NW-1001", "email": "alex@example.com", "message": "The tent pole snapped on its first trip and I think it's defective. I have a photo. Can I claim warranty?"},
+    {"id": "T-015", "channel": "chat", "order_id": null, "email": null, "message": "What's the R-value of your insulated sleeping pad?"},
+    {"id": "T-016", "channel": "email", "order_id": "NW-1004", "email": "casey@example.com", "message": "I changed my mind about the boots and want to return them, they've been worn on three hikes."},
+    {"id": "T-017", "channel": "chat", "order_id": null, "email": null, "message": "I demand to speak to a manager right now, this is unacceptable and I want compensation for my ruined vacation."},
+    {"id": "T-018", "channel": "email", "order_id": null, "email": null, "message": "I think I was double charged and my bank shows two pending amounts, please investigate my account."},
+    {"id": "T-019", "channel": "chat", "order_id": null, "email": null, "message": "Does the canister stove come with a fuel canister?"},
+    {"id": "T-020", "channel": "email", "order_id": "NW-1005", "email": "riley@example.com", "message": "Can I return these water filters? I opened one and used the mouthpiece."}
+  ]
+}
