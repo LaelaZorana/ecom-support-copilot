@@ -15,7 +15,7 @@ This file is the Space front-matter. To deploy:
 
 1. Create a new **Docker** Space.
 2. Push this repository to it (or duplicate from GitHub).
-3. The container reads `$PORT` (Spaces sets `7860`); no secrets are required — it runs the
+3. The container reads `$PORT` (Spaces sets `7860`); no secrets are required, so it runs the
    offline stub by default.
 4. (Optional) add `ANTHROPIC_API_KEY` or `OPENAI_API_KEY` under **Settings → Secrets** to use a
    real model.
