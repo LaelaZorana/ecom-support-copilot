@@ -1,134 +1,200 @@
-/* SupportCopilot design system — Tailwind utilities + custom components.
-   Clean modern SaaS: indigo/violet accent, Inter, generous whitespace,
-   light + dark. Shares the portfolio design language (ParaPilot). */
+/* SupportCopilot design system — friendly, bright customer-support product.
+   Warm teal/emerald primary + warm coral accent on a soft "sand" canvas;
+   generous rounding, soft shadows, modern chat bubbles. Light + dark.
+   Distinct identity within the portfolio — welcoming like Intercom/Gorgias. */
 
 :root {
-  --sc-accent: 99 102 241;        /* indigo-500  */
-  --sc-accent-strong: 79 70 229;  /* indigo-600  */
-  --sc-violet: 139 92 246;        /* violet-500  */
+  --sc-accent: 16 185 129;        /* emerald-500 — bright friendly primary  */
+  --sc-accent-strong: 13 148 136; /* teal-600    — deeper primary           */
+  --sc-accent-deep: 15 118 110;   /* teal-700                                */
+  --sc-coral: 244 98 79;          /* warm coral  — energetic accent          */
+  --sc-coral-soft: 251 124 114;   /* coral-400                               */
   --sc-success: 16 185 129;       /* emerald-500 */
   --sc-warning: 245 158 11;       /* amber-500   */
   --sc-danger: 239 68 68;         /* red-500     */
+
+  /* Warm neutral surfaces (sand) — replaces cold slate. */
+  --sc-paper: 255 253 250;        /* warm white card                         */
+  --sc-line: 231 219 201;         /* sand-200 hairline                       */
+  --sc-track: 235 226 212;        /* warm track for meters/bars              */
+}
+
+.dark {
+  --sc-accent: 52 211 153;        /* emerald-400 — lifts in dark             */
+  --sc-accent-strong: 45 212 191; /* teal-400                                */
+  --sc-coral: 251 124 114;        /* coral-400                               */
+  --sc-paper: 32 27 22;           /* warm dark card                          */
+  --sc-line: 70 60 49;            /* warm slate hairline                     */
+  --sc-track: 60 51 41;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-    Roboto, Helvetica, Arial, sans-serif;
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  font-family: "Avenir Next", Avenir, "Nunito Sans", ui-rounded,
+    "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* Subtle page background gradient (light + dark). */
+/* Friendly, slightly rounded display headings. */
+h1, h2, h3, .sc-display {
+  font-family: ui-rounded, "SF Pro Rounded", "Avenir Next", Avenir,
+    "Nunito Sans", system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Soft, warm page wash — coral glow top-right, teal glow bottom-left. */
 .sc-bg {
   background-image:
-    radial-gradient(60rem 60rem at 110% -10%, rgb(var(--sc-violet) / 0.10), transparent 55%),
-    radial-gradient(50rem 50rem at -10% 0%, rgb(var(--sc-accent) / 0.10), transparent 50%);
+    radial-gradient(58rem 58rem at 108% -12%, rgb(var(--sc-coral) / 0.12), transparent 55%),
+    radial-gradient(52rem 52rem at -12% 4%, rgb(var(--sc-accent) / 0.12), transparent 52%);
 }
 .dark .sc-bg {
   background-image:
-    radial-gradient(60rem 60rem at 110% -10%, rgb(var(--sc-violet) / 0.16), transparent 55%),
-    radial-gradient(50rem 50rem at -10% 0%, rgb(var(--sc-accent) / 0.14), transparent 50%);
+    radial-gradient(58rem 58rem at 108% -12%, rgb(var(--sc-coral) / 0.14), transparent 55%),
+    radial-gradient(52rem 52rem at -12% 4%, rgb(var(--sc-accent) / 0.16), transparent 52%);
 }
 
-/* Gradient brand text. */
+/* Gradient brand text — teal -> emerald -> coral, warm and friendly. */
 .sc-gradient-text {
   background-image: linear-gradient(
-    100deg, rgb(var(--sc-accent-strong)), rgb(var(--sc-violet))
+    100deg, rgb(var(--sc-accent-strong)), rgb(var(--sc-accent)) 55%, rgb(var(--sc-coral-soft))
   );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Card. */
+/* Reusable brand gradient surface (avatars, marks, the send button accent). */
+.sc-grad {
+  background-image: linear-gradient(135deg, rgb(var(--sc-accent-strong)), rgb(var(--sc-accent)));
+}
+.sc-grad-warm {
+  background-image: linear-gradient(135deg, rgb(var(--sc-accent)), rgb(var(--sc-coral)));
+}
+
+/* Card — warm, rounded, soft shadow. */
 .sc-card {
-  border-radius: 1rem;
-  border: 1px solid rgb(226 232 240);          /* slate-200 */
-  background: rgb(255 255 255 / 0.85);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 1px 2px rgb(15 23 42 / 0.04), 0 8px 24px -12px rgb(15 23 42 / 0.12);
+  border-radius: 1.35rem;
+  border: 1px solid rgb(var(--sc-line));
+  background: rgb(var(--sc-paper) / 0.92);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 2px rgb(70 50 30 / 0.04), 0 14px 34px -18px rgb(70 50 30 / 0.22);
 }
 .dark .sc-card {
-  border-color: rgb(51 65 85 / 0.7);           /* slate-700 */
-  background: rgb(15 23 42 / 0.6);             /* slate-900 */
-  box-shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 28px -14px rgb(0 0 0 / 0.6);
+  background: rgb(var(--sc-paper) / 0.78);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.35), 0 14px 34px -18px rgb(0 0 0 / 0.7);
 }
 
 /* KPI card hover lift. */
-.sc-kpi { transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease; }
-.sc-kpi:hover { transform: translateY(-2px); }
+.sc-kpi { transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
+.sc-kpi:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px rgb(70 50 30 / 0.05), 0 20px 40px -18px rgb(var(--sc-accent) / 0.28);
+}
+.dark .sc-kpi:hover {
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.4), 0 20px 40px -18px rgb(var(--sc-accent) / 0.4);
+}
+
+/* ---- Buttons ------------------------------------------------------------ */
+/* Primary "pill" CTA — friendly teal->emerald with a soft glow. */
+.sc-btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.7rem 1.25rem;
+  font-weight: 700; font-size: 0.875rem; color: white;
+  background-image: linear-gradient(135deg, rgb(var(--sc-accent-strong)), rgb(var(--sc-accent)));
+  box-shadow: 0 10px 22px -10px rgb(var(--sc-accent) / 0.7);
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+.sc-btn-primary:hover { transform: translateY(-1px); filter: brightness(1.04);
+  box-shadow: 0 14px 26px -10px rgb(var(--sc-accent) / 0.8); }
+.sc-btn-primary:active { transform: translateY(0); }
+
+/* Secondary — soft warm outline pill. */
+.sc-btn-secondary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
+  font-weight: 600; font-size: 0.875rem;
+  color: rgb(var(--sc-accent-deep));
+  background: rgb(var(--sc-paper) / 0.7);
+  border: 1.5px solid rgb(var(--sc-accent) / 0.35);
+  transition: border-color .12s ease, color .12s ease, background-color .12s ease, transform .12s ease;
+}
+.sc-btn-secondary:hover { border-color: rgb(var(--sc-accent) / 0.7); transform: translateY(-1px); }
+.dark .sc-btn-secondary { color: rgb(var(--sc-accent-strong)); }
 
 /* ---- Chat bubbles ------------------------------------------------------- */
 .sc-bubble {
-  max-width: 85%;
-  padding: 0.75rem 0.95rem;
-  border-radius: 1.1rem;
-  line-height: 1.5;
-  font-size: 0.94rem;
+  max-width: 88%;
+  padding: 0.8rem 1.05rem;
+  border-radius: 1.4rem;
+  line-height: 1.55;
+  font-size: 0.95rem;
 }
-/* Agent bubble (left). */
+/* Agent bubble (left) — soft warm card with a friendly tail. */
 .sc-bubble--agent {
-  border: 1px solid rgb(226 232 240);
-  background: rgb(255 255 255 / 0.9);
-  border-top-left-radius: 0.35rem;
+  border: 1px solid rgb(var(--sc-line));
+  background: rgb(var(--sc-paper) / 0.95);
+  border-bottom-left-radius: 0.45rem;
 }
 .dark .sc-bubble--agent {
-  border-color: rgb(51 65 85 / 0.7);
-  background: rgb(30 41 59 / 0.7);             /* slate-800 */
+  background: rgb(var(--sc-paper) / 0.9);
 }
-/* User bubble (right) — brand gradient. */
+/* User bubble (right) — warm teal->emerald gradient with a tail. */
 .sc-bubble--user {
   color: white;
-  background: linear-gradient(135deg, rgb(var(--sc-accent-strong)), rgb(var(--sc-violet)));
-  border-top-right-radius: 0.35rem;
-  box-shadow: 0 6px 18px -8px rgb(var(--sc-accent) / 0.7);
+  background: linear-gradient(135deg, rgb(var(--sc-accent-strong)), rgb(var(--sc-accent)));
+  border-bottom-right-radius: 0.45rem;
+  box-shadow: 0 8px 20px -10px rgb(var(--sc-accent) / 0.7);
 }
 
 /* ---- Citation chip ------------------------------------------------------ */
 .sc-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.18rem 0.55rem;
+  gap: 0.32rem;
+  padding: 0.22rem 0.6rem;
   border-radius: 999px;
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1;
   border: 1px solid transparent;
   transition: background-color .12s ease, border-color .12s ease;
 }
-.sc-chip-dot { width: 0.4rem; height: 0.4rem; border-radius: 999px; flex: none; }
-/* kind variants */
+.sc-chip-dot { width: 0.42rem; height: 0.42rem; border-radius: 999px; flex: none; }
+/* kind variants — keyed to the source type. */
 .sc-chip--policy {
-  color: rgb(var(--sc-accent-strong));
-  background: rgb(var(--sc-accent) / 0.12);
-  border-color: rgb(var(--sc-accent) / 0.25);
+  color: rgb(var(--sc-accent-deep));
+  background: rgb(var(--sc-accent) / 0.14);
+  border-color: rgb(var(--sc-accent) / 0.3);
 }
+.dark .sc-chip--policy { color: rgb(var(--sc-accent-strong)); }
 .sc-chip--policy .sc-chip-dot { background: rgb(var(--sc-accent-strong)); }
 .sc-chip--product {
-  color: rgb(5 150 105);
-  background: rgb(var(--sc-success) / 0.12);
-  border-color: rgb(var(--sc-success) / 0.25);
+  color: rgb(15 118 110);
+  background: rgb(45 212 191 / 0.16);
+  border-color: rgb(45 212 191 / 0.32);
 }
-.dark .sc-chip--product { color: rgb(52 211 153); }
-.sc-chip--product .sc-chip-dot { background: rgb(var(--sc-success)); }
+.dark .sc-chip--product { color: rgb(94 234 212); }
+.sc-chip--product .sc-chip-dot { background: rgb(20 184 166); }
 .sc-chip--order {
-  color: rgb(180 83 9);
-  background: rgb(var(--sc-warning) / 0.14);
-  border-color: rgb(var(--sc-warning) / 0.3);
+  color: rgb(189 56 41);
+  background: rgb(var(--sc-coral) / 0.14);
+  border-color: rgb(var(--sc-coral) / 0.32);
 }
-.dark .sc-chip--order { color: rgb(251 191 36); }
-.sc-chip--order .sc-chip-dot { background: rgb(var(--sc-warning)); }
+.dark .sc-chip--order { color: rgb(255 160 153); }
+.sc-chip--order .sc-chip-dot { background: rgb(var(--sc-coral)); }
 
 /* ---- Status badges ------------------------------------------------------ */
 .sc-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.12rem 0.55rem;
+  gap: 0.32rem;
+  padding: 0.16rem 0.6rem;
   border-radius: 999px;
   font-size: 0.68rem;
   font-weight: 700;
@@ -136,11 +202,11 @@ body {
   border: 1px solid transparent;
 }
 .sc-badge--resolved {
-  color: rgb(4 120 87);
-  background: rgb(var(--sc-success) / 0.12);
-  border-color: rgb(var(--sc-success) / 0.28);
+  color: rgb(15 118 110);
+  background: rgb(var(--sc-success) / 0.14);
+  border-color: rgb(var(--sc-success) / 0.3);
 }
-.dark .sc-badge--resolved { color: rgb(52 211 153); }
+.dark .sc-badge--resolved { color: rgb(110 231 183); }
 .sc-badge--escalate {
   color: rgb(180 83 9);
   background: rgb(var(--sc-warning) / 0.14);
@@ -148,41 +214,40 @@ body {
 }
 .dark .sc-badge--escalate { color: rgb(251 191 36); }
 .sc-badge--neutral {
-  color: rgb(71 85 105);
-  background: rgb(148 163 184 / 0.15);
-  border-color: rgb(148 163 184 / 0.3);
+  color: rgb(var(--sc-line));
+  color: rgb(107 90 71);
+  background: rgb(140 120 96 / 0.14);
+  border-color: rgb(140 120 96 / 0.28);
 }
-.dark .sc-badge--neutral { color: rgb(148 163 184); }
+.dark .sc-badge--neutral { color: rgb(179 158 126); }
 
 /* ---- Decision / escalation cards --------------------------------------- */
-.sc-decision { border-radius: 0.85rem; border: 1px solid; padding: 0.75rem 0.9rem; }
+.sc-decision { border-radius: 1.1rem; border: 1px solid; padding: 0.85rem 1rem; }
 .sc-decision--approve {
-  background: rgb(var(--sc-success) / 0.08);
-  border-color: rgb(var(--sc-success) / 0.35);
+  background: rgb(var(--sc-success) / 0.1);
+  border-color: rgb(var(--sc-success) / 0.4);
 }
 .sc-decision--deny {
-  background: rgb(var(--sc-danger) / 0.07);
-  border-color: rgb(var(--sc-danger) / 0.32);
+  background: rgb(var(--sc-danger) / 0.08);
+  border-color: rgb(var(--sc-danger) / 0.34);
 }
 .sc-decision--escalate {
-  background: rgb(var(--sc-warning) / 0.09);
-  border-color: rgb(var(--sc-warning) / 0.35);
+  background: rgb(var(--sc-warning) / 0.1);
+  border-color: rgb(var(--sc-warning) / 0.36);
 }
 
 /* ---- Confidence meter --------------------------------------------------- */
-.sc-meter { height: 0.4rem; border-radius: 999px; background: rgb(226 232 240); overflow: hidden; }
-.dark .sc-meter { background: rgb(51 65 85); }
+.sc-meter { height: 0.45rem; border-radius: 999px; background: rgb(var(--sc-track)); overflow: hidden; }
 .sc-meter > span {
-  display: block; height: 100%;
-  background: linear-gradient(90deg, rgb(var(--sc-accent)), rgb(var(--sc-violet)));
+  display: block; height: 100%; border-radius: 999px;
+  background: linear-gradient(90deg, rgb(var(--sc-accent-strong)), rgb(var(--sc-accent)));
 }
 
 /* ---- Dashboard bar chart ------------------------------------------------ */
-.sc-bar-track { height: 0.6rem; border-radius: 999px; background: rgb(226 232 240); overflow: hidden; }
-.dark .sc-bar-track { background: rgb(51 65 85); }
+.sc-bar-track { height: 0.65rem; border-radius: 999px; background: rgb(var(--sc-track)); overflow: hidden; }
 .sc-bar-fill {
   display: block; height: 100%; border-radius: 999px; min-width: 0.5rem;
-  background: linear-gradient(90deg, rgb(var(--sc-accent)), rgb(var(--sc-violet)));
+  background: linear-gradient(90deg, rgb(var(--sc-accent-strong)), rgb(var(--sc-accent)));
 }
 
 /* Donut / progress ring uses inline conic-gradient via style attr. */
@@ -195,14 +260,14 @@ body {
 
 /* Fade-in for swapped content. */
 @keyframes sc-fade-in {
-  from { opacity: 0; transform: translateY(4px); }
+  from { opacity: 0; transform: translateY(5px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.sc-fade { animation: sc-fade-in .22s ease both; }
+.sc-fade { animation: sc-fade-in .24s ease both; }
 
 /* Typing dots (assistant thinking). */
 .sc-typing span {
-  display: inline-block; width: 0.4rem; height: 0.4rem; margin: 0 0.08rem;
+  display: inline-block; width: 0.42rem; height: 0.42rem; margin: 0 0.08rem;
   border-radius: 999px; background: currentColor; opacity: 0.5;
   animation: sc-blink 1.2s infinite both;
 }
@@ -213,11 +278,13 @@ body {
 /* Focus ring. */
 .sc-focus:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgb(var(--sc-accent) / 0.4);
+  box-shadow: 0 0 0 3px rgb(var(--sc-accent) / 0.45);
 }
 
 /* Thin scrollbar for the chat thread. */
-.sc-scroll { scrollbar-width: thin; scrollbar-color: rgb(148 163 184 / 0.5) transparent; }
+.sc-scroll { scrollbar-width: thin; scrollbar-color: rgb(var(--sc-accent) / 0.4) transparent; }
 .sc-scroll::-webkit-scrollbar { width: 8px; }
-.sc-scroll::-webkit-scrollbar-thumb { background: rgb(148 163 184 / 0.4); border-radius: 999px; }
+.sc-scroll::-webkit-scrollbar-thumb { background: rgb(var(--sc-accent) / 0.35); border-radius: 999px; }
 .sc-scroll::-webkit-scrollbar-track { background: transparent; }
+</content>
+</invoke>

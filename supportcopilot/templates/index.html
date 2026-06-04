@@ -1,50 +1,53 @@
 {% extends "base.html" %}
-{% block title %}SupportCopilot — AI e-commerce support that proves its ROI{% endblock %}
+{% block title %}SupportCopilot — friendly AI e-commerce support that proves its ROI{% endblock %}
 {% block content %}
 
 <!-- Hero -->
 <section class="text-center max-w-3xl mx-auto">
-  <span class="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700 ring-1 ring-inset ring-brand-200 dark:bg-brand-500/10 dark:text-brand-300 dark:ring-brand-500/20">
-    <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+  <span class="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3.5 py-1.5 text-xs font-bold text-brand-700 ring-1 ring-inset ring-brand-200 dark:bg-brand-500/10 dark:text-brand-300 dark:ring-brand-500/25">
+    <span class="relative flex h-2 w-2">
+      <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-400 opacity-60"></span>
+      <span class="relative inline-flex h-2 w-2 rounded-full bg-brand-500"></span>
+    </span>
     Runs fully offline · no API keys required
   </span>
   <h1 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
-    AI support that <span class="sc-gradient-text">resolves tier-1 tickets</span><br class="hidden sm:block" /> and proves the ROI
+    Friendly AI support that <span class="sc-gradient-text">resolves tier-1 tickets</span><br class="hidden sm:block" /> and proves the ROI
   </h1>
-  <p class="mt-4 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+  <p class="mt-4 text-lg leading-relaxed text-sand-600 dark:text-sand-300">
     SupportCopilot answers "where's my order?", returns, and policy questions with
-    <strong class="text-slate-800 dark:text-slate-100">cited, policy-correct</strong> replies —
-    auto-resolving what it can and escalating the rest to a human.
+    <strong class="text-sand-800 dark:text-sand-100">cited, policy-correct</strong> replies —
+    auto-resolving what it can and warmly handing the rest to a human.
   </p>
 
-  <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
-    <a href="#chat" class="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700">
+  <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
+    <a href="#chat" class="sc-btn-primary">
       <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
       Try a live demo
     </a>
-    <a href="/dashboard" class="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-brand-300 hover:text-brand-600 dark:border-slate-700 dark:bg-slate-900/50 dark:text-slate-200 dark:hover:text-brand-400">
+    <a href="/dashboard" class="sc-btn-secondary">
       <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="10" width="3" height="7"/><rect x="13" y="6" width="3" height="11"/></svg>
       See the ROI dashboard
     </a>
   </div>
 
   <!-- Proof strip (numbers come from replaying the seeded tickets) -->
-  <dl class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+  <dl class="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-4">
     <div class="sc-card sc-kpi p-4">
-      <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Deflection</dt>
-      <dd class="mt-1 text-2xl font-bold sc-gradient-text">{{ '%.0f' % (roi.deflection_rate * 100) }}%</dd>
+      <dt class="text-xs font-semibold uppercase tracking-wide text-sand-500 dark:text-sand-400">Deflection</dt>
+      <dd class="mt-1 text-2xl font-extrabold sc-gradient-text">{{ '%.0f' % (roi.deflection_rate * 100) }}%</dd>
     </div>
     <div class="sc-card sc-kpi p-4">
-      <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Tickets handled</dt>
-      <dd class="mt-1 text-2xl font-bold text-slate-800 dark:text-slate-100">{{ roi.total_tickets }}</dd>
+      <dt class="text-xs font-semibold uppercase tracking-wide text-sand-500 dark:text-sand-400">Tickets handled</dt>
+      <dd class="mt-1 text-2xl font-extrabold text-sand-800 dark:text-sand-100">{{ roi.total_tickets }}</dd>
     </div>
     <div class="sc-card sc-kpi p-4">
-      <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Escalation</dt>
-      <dd class="mt-1 text-2xl font-bold text-slate-800 dark:text-slate-100">{{ '%.0f' % (roi.escalation_rate * 100) }}%</dd>
+      <dt class="text-xs font-semibold uppercase tracking-wide text-sand-500 dark:text-sand-400">Escalation</dt>
+      <dd class="mt-1 text-2xl font-extrabold text-sand-800 dark:text-sand-100">{{ '%.0f' % (roi.escalation_rate * 100) }}%</dd>
     </div>
     <div class="sc-card sc-kpi p-4">
-      <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Monthly savings</dt>
-      <dd class="mt-1 text-2xl font-bold text-emerald-600 dark:text-emerald-400">${{ '{:,.0f}'.format(roi.monthly_cost_saved_projection) }}</dd>
+      <dt class="text-xs font-semibold uppercase tracking-wide text-sand-500 dark:text-sand-400">Monthly savings</dt>
+      <dd class="mt-1 text-2xl font-extrabold text-brand-600 dark:text-brand-400">${{ '{:,.0f}'.format(roi.monthly_cost_saved_projection) }}</dd>
     </div>
   </dl>
 </section>
@@ -53,8 +56,8 @@
 <section id="chat" class="mt-12 max-w-3xl mx-auto scroll-mt-20">
   <div class="mb-4 flex items-center justify-between">
     <div>
-      <h2 class="text-xl font-bold tracking-tight">Customer support chat</h2>
-      <p class="text-sm text-slate-500 dark:text-slate-400">
+      <h2 class="text-xl font-extrabold tracking-tight">Customer support chat</h2>
+      <p class="text-sm text-sand-500 dark:text-sand-400">
         Grounded in Northwind Outdoors' catalog &amp; policies — every answer cites its source.
       </p>
     </div>
@@ -65,12 +68,12 @@
     <div id="thread" class="sc-scroll flex flex-col gap-4 p-4 sm:p-5" style="min-height: 22rem; max-height: 52vh; overflow-y:auto;" aria-live="polite">
       <!-- Greeting (agent) -->
       <div class="flex items-start gap-2.5">
-        <span class="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-gradient-to-br from-brand-600 to-violet-500 text-white">
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+        <span class="sc-grad mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full text-white">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
         </span>
-        <div class="sc-bubble sc-bubble--agent text-slate-700 dark:text-slate-200">
-          Hi! I'm the Northwind Outdoors support copilot. Ask about products, shipping, returns,
-          or an order — or tap an example below to see me work.
+        <div class="sc-bubble sc-bubble--agent text-sand-700 dark:text-sand-200">
+          Hi there! 👋 I'm the Northwind Outdoors support copilot. Ask about products, shipping,
+          returns, or an order — or tap an example below to see me work.
         </div>
       </div>
     </div>
@@ -78,7 +81,7 @@
     <!-- Composer -->
     <form
       id="chat-form"
-      class="border-t border-slate-200/70 p-3 dark:border-slate-800/70"
+      class="border-t border-sand-200/70 p-3 dark:border-sand-700/60"
       hx-post="/chat"
       hx-target="#thread"
       hx-swap="beforeend"
@@ -89,25 +92,25 @@
           <label for="order_id" class="sr-only">Order number</label>
           <input id="order_id" name="order_id" type="text" autocomplete="off"
                  placeholder="Order # (optional, e.g. NW-1001)"
-                 class="sc-focus w-full rounded-lg border border-slate-200 bg-white/70 px-3 py-2 text-sm text-slate-800 placeholder:text-slate-400 dark:border-slate-700 dark:bg-slate-900/50 dark:text-slate-100" />
+                 class="sc-focus w-full rounded-xl border border-sand-200 bg-sand-50/60 px-3 py-2 text-sm text-sand-800 placeholder:text-sand-400 dark:border-sand-700 dark:bg-sand-800/40 dark:text-sand-100" />
         </div>
         <div class="relative">
           <label for="email" class="sr-only">Email</label>
           <input id="email" name="email" type="email" autocomplete="off"
                  placeholder="Email (optional)"
-                 class="sc-focus w-full rounded-lg border border-slate-200 bg-white/70 px-3 py-2 text-sm text-slate-800 placeholder:text-slate-400 dark:border-slate-700 dark:bg-slate-900/50 dark:text-slate-100" />
+                 class="sc-focus w-full rounded-xl border border-sand-200 bg-sand-50/60 px-3 py-2 text-sm text-sand-800 placeholder:text-sand-400 dark:border-sand-700 dark:bg-sand-800/40 dark:text-sand-100" />
         </div>
       </div>
       <div class="flex items-center gap-2">
         <label for="message" class="sr-only">Your message</label>
         <input id="message" name="message" type="text" required autofocus autocomplete="off"
                placeholder="Type your question…"
-               class="sc-focus min-w-0 flex-1 rounded-lg border border-slate-200 bg-white/70 px-3.5 py-2.5 text-[15px] text-slate-800 placeholder:text-slate-400 dark:border-slate-700 dark:bg-slate-900/50 dark:text-slate-100" />
+               class="sc-focus min-w-0 flex-1 rounded-full border border-sand-200 bg-sand-50/60 px-4 py-2.5 text-[15px] text-sand-800 placeholder:text-sand-400 dark:border-sand-700 dark:bg-sand-800/40 dark:text-sand-100" />
         <button type="submit"
-                class="sc-focus inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700">
+                class="sc-btn-primary sc-focus shrink-0 !px-4 !py-2.5">
           <span class="htmx-indicator h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white"></span>
           <span class="htmx-indicator-hide">Send</span>
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          <svg class="htmx-indicator-hide h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
         </button>
       </div>
     </form>
@@ -115,7 +118,7 @@
 
   <!-- Example chips -->
   <div class="mt-4">
-    <p class="mb-2 text-xs font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">Try an example</p>
+    <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-sand-400 dark:text-sand-500">Try an example</p>
     <div class="flex flex-wrap gap-2">
       {% set examples = [
         ("How long does standard shipping take and is it free?", "", ""),
@@ -127,7 +130,7 @@
       {% for text, oid, mail in examples %}
       <button type="button"
         onclick='useExample({{ text | tojson }}, {{ oid | tojson }}, {{ mail | tojson }})'
-        class="rounded-full border border-slate-200 bg-white/60 px-3 py-1.5 text-xs text-slate-600 transition hover:border-brand-300 hover:text-brand-600 dark:border-slate-800 dark:bg-slate-900/40 dark:text-slate-300 dark:hover:text-brand-400">
+        class="rounded-full border border-sand-200 bg-sand-50/70 px-3.5 py-1.5 text-xs font-medium text-sand-600 transition hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700 dark:border-sand-700 dark:bg-sand-800/40 dark:text-sand-300 dark:hover:border-brand-500/40 dark:hover:text-brand-300">
         {{ text }}
       </button>
       {% endfor %}
@@ -135,3 +138,4 @@
   </div>
 </section>
 {% endblock %}
+</content>

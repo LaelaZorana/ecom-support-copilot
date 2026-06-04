@@ -5,17 +5,16 @@
 <!-- Header -->
 <section class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
   <div>
-    <span class="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700 ring-1 ring-inset ring-brand-200 dark:bg-brand-500/10 dark:text-brand-300 dark:ring-brand-500/20">
+    <span class="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3.5 py-1.5 text-xs font-bold text-brand-700 ring-1 ring-inset ring-brand-200 dark:bg-brand-500/10 dark:text-brand-300 dark:ring-brand-500/25">
       Earned, not hard-coded
     </span>
-    <h1 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl"><span class="sc-gradient-text">ROI dashboard</span></h1>
-    <p class="mt-2 max-w-2xl text-slate-600 dark:text-slate-300">
+    <h1 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl"><span class="sc-gradient-text">ROI dashboard</span></h1>
+    <p class="mt-2 max-w-2xl text-sand-600 dark:text-sand-300">
       Every number is computed by replaying {{ report.total_tickets }} seeded support tickets
       through the live agent. Change the policies, catalog, or ticket set and the numbers move.
     </p>
   </div>
-  <a href="/api/roi" target="_blank" rel="noopener"
-     class="inline-flex shrink-0 items-center gap-1.5 self-start rounded-lg border border-slate-300 bg-white/70 px-3 py-2 text-sm font-medium text-slate-700 transition hover:border-brand-300 hover:text-brand-600 dark:border-slate-700 dark:bg-slate-900/50 dark:text-slate-200 dark:hover:text-brand-400">
+  <a href="/api/roi" target="_blank" rel="noopener" class="sc-btn-secondary shrink-0 self-start !px-3.5 !py-2 !text-sm">
     <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
     View JSON
   </a>
@@ -25,48 +24,48 @@
 <section class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
   <!-- Deflection (primary) -->
   <div class="sc-card sc-kpi relative overflow-hidden p-5 lg:col-span-1 ring-1 ring-brand-500/30">
-    <div class="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
+    <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-sand-500 dark:text-sand-400">
       <svg class="h-4 w-4 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
       Deflection rate
     </div>
     <div class="mt-2 text-4xl font-extrabold sc-gradient-text">{{ '%.0f' % (report.deflection_rate * 100) }}%</div>
-    <div class="mt-1 text-sm text-slate-500 dark:text-slate-400">{{ report.auto_resolved }} of {{ report.total_tickets }} auto-resolved</div>
+    <div class="mt-1 text-sm text-sand-500 dark:text-sand-400">{{ report.auto_resolved }} of {{ report.total_tickets }} auto-resolved</div>
   </div>
 
   <div class="sc-card sc-kpi p-5">
-    <div class="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
-      <svg class="h-4 w-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-sand-500 dark:text-sand-400">
+      <svg class="h-4 w-4 text-sand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
       Tickets handled
     </div>
-    <div class="mt-2 text-4xl font-extrabold text-slate-800 dark:text-slate-100">{{ report.total_tickets }}</div>
-    <div class="mt-1 text-sm text-slate-500 dark:text-slate-400">replayed through the agent</div>
+    <div class="mt-2 text-4xl font-extrabold text-sand-800 dark:text-sand-100">{{ report.total_tickets }}</div>
+    <div class="mt-1 text-sm text-sand-500 dark:text-sand-400">replayed through the agent</div>
   </div>
 
   <div class="sc-card sc-kpi p-5">
-    <div class="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
-      <svg class="h-4 w-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-sand-500 dark:text-sand-400">
+      <svg class="h-4 w-4 text-sand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       Handle-time saved
     </div>
-    <div class="mt-2 text-4xl font-extrabold text-slate-800 dark:text-slate-100">{{ '%.1f' % report.handle_time_saved_hours }}h</div>
-    <div class="mt-1 text-sm text-slate-500 dark:text-slate-400">{{ '%.0f' % report.baseline_handle_time_min }} min baseline / ticket</div>
+    <div class="mt-2 text-4xl font-extrabold text-sand-800 dark:text-sand-100">{{ '%.1f' % report.handle_time_saved_hours }}h</div>
+    <div class="mt-1 text-sm text-sand-500 dark:text-sand-400">{{ '%.0f' % report.baseline_handle_time_min }} min baseline / ticket</div>
   </div>
 
   <div class="sc-card sc-kpi p-5">
-    <div class="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
+    <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-sand-500 dark:text-sand-400">
       <svg class="h-4 w-4 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
       Escalation rate
     </div>
-    <div class="mt-2 text-4xl font-extrabold text-slate-800 dark:text-slate-100">{{ '%.0f' % (report.escalation_rate * 100) }}%</div>
-    <div class="mt-1 text-sm text-slate-500 dark:text-slate-400">{{ report.escalated }} to a human</div>
+    <div class="mt-2 text-4xl font-extrabold text-sand-800 dark:text-sand-100">{{ '%.0f' % (report.escalation_rate * 100) }}%</div>
+    <div class="mt-1 text-sm text-sand-500 dark:text-sand-400">{{ report.escalated }} to a human</div>
   </div>
 
-  <div class="sc-card sc-kpi p-5 ring-1 ring-emerald-500/30">
-    <div class="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
-      <svg class="h-4 w-4 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+  <div class="sc-card sc-kpi p-5 ring-1 ring-brand-500/30">
+    <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-sand-500 dark:text-sand-400">
+      <svg class="h-4 w-4 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
       Monthly savings
     </div>
-    <div class="mt-2 text-4xl font-extrabold text-emerald-600 dark:text-emerald-400">${{ '{:,.0f}'.format(report.monthly_cost_saved_projection) }}</div>
-    <div class="mt-1 text-sm text-slate-500 dark:text-slate-400">at 3,000 tickets/mo · ${{ '%.0f' % report.agent_cost_per_hour }}/agent-hr</div>
+    <div class="mt-2 text-4xl font-extrabold text-brand-600 dark:text-brand-400">${{ '{:,.0f}'.format(report.monthly_cost_saved_projection) }}</div>
+    <div class="mt-1 text-sm text-sand-500 dark:text-sand-400">at 3,000 tickets/mo · ${{ '%.0f' % report.agent_cost_per_hour }}/agent-hr</div>
   </div>
 </section>
 
@@ -74,29 +73,29 @@
 <section class="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
   <!-- Donut: resolved vs escalated -->
   <div class="sc-card p-5">
-    <h2 class="text-base font-semibold">Resolution mix</h2>
+    <h2 class="text-base font-bold">Resolution mix</h2>
     <div class="mt-4 flex items-center gap-5">
       {% set defl = (report.deflection_rate * 100) | round(1) %}
       <div class="relative h-28 w-28 shrink-0">
         <div class="sc-ring h-28 w-28"
-             style="background: conic-gradient(rgb(79 70 229) 0% {{ defl }}%, rgb(245 158 11) {{ defl }}% 100%);"></div>
-        <div class="absolute inset-[10px] grid place-items-center rounded-full bg-white dark:bg-slate-900">
+             style="background: conic-gradient(rgb(13 148 136) 0% {{ defl }}%, rgb(244 98 79) {{ defl }}% 100%);"></div>
+        <div class="absolute inset-[10px] grid place-items-center rounded-full bg-[rgb(255_253_250)] dark:bg-[rgb(32_27_22)]">
           <div class="text-center">
-            <div class="text-2xl font-bold sc-gradient-text leading-none">{{ '%.0f' % (report.deflection_rate * 100) }}%</div>
-            <div class="text-[10px] uppercase tracking-wide text-slate-400">resolved</div>
+            <div class="text-2xl font-extrabold sc-gradient-text leading-none">{{ '%.0f' % (report.deflection_rate * 100) }}%</div>
+            <div class="text-[10px] uppercase tracking-wide text-sand-400">resolved</div>
           </div>
         </div>
       </div>
       <div class="space-y-2 text-sm">
         <div class="flex items-center gap-2">
-          <span class="h-2.5 w-2.5 rounded-full" style="background: rgb(79 70 229);"></span>
-          <span class="text-slate-600 dark:text-slate-300">Auto-resolved</span>
-          <span class="ml-auto font-semibold">{{ report.auto_resolved }}</span>
+          <span class="h-2.5 w-2.5 rounded-full" style="background: rgb(13 148 136);"></span>
+          <span class="text-sand-600 dark:text-sand-300">Auto-resolved</span>
+          <span class="ml-auto font-bold">{{ report.auto_resolved }}</span>
         </div>
         <div class="flex items-center gap-2">
-          <span class="h-2.5 w-2.5 rounded-full" style="background: rgb(245 158 11);"></span>
-          <span class="text-slate-600 dark:text-slate-300">Escalated</span>
-          <span class="ml-auto font-semibold">{{ report.escalated }}</span>
+          <span class="h-2.5 w-2.5 rounded-full" style="background: rgb(244 98 79);"></span>
+          <span class="text-sand-600 dark:text-sand-300">Escalated</span>
+          <span class="ml-auto font-bold">{{ report.escalated }}</span>
         </div>
       </div>
     </div>
@@ -104,14 +103,14 @@
 
   <!-- Bar chart: tickets by intent -->
   <div class="sc-card p-5 lg:col-span-2">
-    <h2 class="text-base font-semibold">Tickets by intent</h2>
+    <h2 class="text-base font-bold">Tickets by intent</h2>
     <div class="mt-4 space-y-3">
       {% set max_n = report.by_intent.values() | max %}
       {% for intent, n in report.by_intent.items() %}
       <div>
         <div class="mb-1 flex items-center justify-between text-sm">
-          <span class="font-medium capitalize text-slate-600 dark:text-slate-300">{{ intent | replace('_', ' ') }}</span>
-          <span class="font-semibold text-slate-500 dark:text-slate-400">{{ n }}</span>
+          <span class="font-semibold capitalize text-sand-600 dark:text-sand-300">{{ intent | replace('_', ' ') }}</span>
+          <span class="font-bold text-sand-500 dark:text-sand-400">{{ n }}</span>
         </div>
         <div class="sc-bar-track">
           <span class="sc-bar-fill" style="width: {{ (n / max_n * 100) | round(0, 'floor') }}%"></span>
@@ -125,30 +124,30 @@
 <!-- How savings are computed -->
 <section class="mt-6">
   <div class="sc-card p-5">
-    <h2 class="text-base font-semibold">How the savings are computed</h2>
+    <h2 class="text-base font-bold">How the savings are computed</h2>
     <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="rounded-xl bg-slate-50 p-4 dark:bg-slate-800/40">
-        <div class="text-xs font-medium uppercase tracking-wide text-slate-400">Baseline / ticket</div>
-        <div class="mt-1 text-xl font-bold text-slate-800 dark:text-slate-100">{{ '%.0f' % report.baseline_handle_time_min }} min</div>
+      <div class="rounded-2xl bg-sand-100/70 p-4 dark:bg-sand-800/40">
+        <div class="text-xs font-semibold uppercase tracking-wide text-sand-400">Baseline / ticket</div>
+        <div class="mt-1 text-xl font-extrabold text-sand-800 dark:text-sand-100">{{ '%.0f' % report.baseline_handle_time_min }} min</div>
       </div>
-      <div class="rounded-xl bg-slate-50 p-4 dark:bg-slate-800/40">
-        <div class="text-xs font-medium uppercase tracking-wide text-slate-400">Auto-resolved</div>
-        <div class="mt-1 text-xl font-bold text-slate-800 dark:text-slate-100">{{ report.auto_resolved }} tickets</div>
+      <div class="rounded-2xl bg-sand-100/70 p-4 dark:bg-sand-800/40">
+        <div class="text-xs font-semibold uppercase tracking-wide text-sand-400">Auto-resolved</div>
+        <div class="mt-1 text-xl font-extrabold text-sand-800 dark:text-sand-100">{{ report.auto_resolved }} tickets</div>
       </div>
-      <div class="rounded-xl bg-slate-50 p-4 dark:bg-slate-800/40">
-        <div class="text-xs font-medium uppercase tracking-wide text-slate-400">Time saved (sample)</div>
-        <div class="mt-1 text-xl font-bold text-slate-800 dark:text-slate-100">{{ '%.0f' % report.handle_time_saved_min }} min</div>
+      <div class="rounded-2xl bg-sand-100/70 p-4 dark:bg-sand-800/40">
+        <div class="text-xs font-semibold uppercase tracking-wide text-sand-400">Time saved (sample)</div>
+        <div class="mt-1 text-xl font-extrabold text-sand-800 dark:text-sand-100">{{ '%.0f' % report.handle_time_saved_min }} min</div>
       </div>
-      <div class="rounded-xl bg-emerald-50 p-4 dark:bg-emerald-500/10">
-        <div class="text-xs font-medium uppercase tracking-wide text-emerald-700/70 dark:text-emerald-400/80">Cost saved (sample)</div>
-        <div class="mt-1 text-xl font-bold text-emerald-600 dark:text-emerald-400">${{ '%.2f' % report.cost_saved }}</div>
+      <div class="rounded-2xl bg-brand-50 p-4 dark:bg-brand-500/10">
+        <div class="text-xs font-semibold uppercase tracking-wide text-brand-700/70 dark:text-brand-400/80">Cost saved (sample)</div>
+        <div class="mt-1 text-xl font-extrabold text-brand-600 dark:text-brand-400">${{ '%.2f' % report.cost_saved }}</div>
       </div>
     </div>
-    <p class="mt-3 text-sm text-slate-500 dark:text-slate-400">
+    <p class="mt-3 text-sm text-sand-500 dark:text-sand-400">
       {{ report.auto_resolved }} auto-resolved × {{ '%.0f' % report.baseline_handle_time_min }} min
       = {{ '%.0f' % report.handle_time_saved_min }} min saved, valued at
       ${{ '%.0f' % report.agent_cost_per_hour }}/hr → projected to
-      <strong class="text-slate-700 dark:text-slate-200">${{ '{:,.0f}'.format(report.monthly_cost_saved_projection) }}/mo</strong>
+      <strong class="text-sand-700 dark:text-sand-200">${{ '{:,.0f}'.format(report.monthly_cost_saved_projection) }}/mo</strong>
       at 3,000 tickets/month.
     </p>
   </div>
@@ -157,14 +156,14 @@
 <!-- Per-ticket outcomes -->
 <section class="mt-6">
   <div class="sc-card overflow-hidden">
-    <div class="border-b border-slate-200/70 px-5 py-4 dark:border-slate-800/70">
-      <h2 class="text-base font-semibold">Per-ticket outcomes</h2>
-      <p class="text-sm text-slate-500 dark:text-slate-400">Each seeded ticket replayed through the live agent.</p>
+    <div class="border-b border-sand-200/70 px-5 py-4 dark:border-sand-700/60">
+      <h2 class="text-base font-bold">Per-ticket outcomes</h2>
+      <p class="text-sm text-sand-500 dark:text-sand-400">Each seeded ticket replayed through the live agent.</p>
     </div>
     <div class="overflow-x-auto">
       <table class="w-full text-sm">
         <thead>
-          <tr class="border-b border-slate-200/70 text-left text-xs font-semibold uppercase tracking-wide text-slate-400 dark:border-slate-800/70">
+          <tr class="border-b border-sand-200/70 text-left text-xs font-bold uppercase tracking-wide text-sand-400 dark:border-sand-700/60">
             <th class="px-5 py-3">ID</th>
             <th class="px-5 py-3">Channel</th>
             <th class="px-5 py-3">Intent</th>
@@ -175,9 +174,9 @@
         </thead>
         <tbody>
           {% for o in report.outcomes %}
-          <tr class="border-b border-slate-100 last:border-0 transition hover:bg-slate-50 dark:border-slate-800/50 dark:hover:bg-slate-800/30">
-            <td class="px-5 py-3 font-mono text-xs text-slate-500 dark:text-slate-400">{{ o.ticket_id }}</td>
-            <td class="px-5 py-3 text-slate-600 dark:text-slate-300 capitalize">{{ o.channel }}</td>
+          <tr class="border-b border-sand-100 last:border-0 transition hover:bg-brand-50/60 dark:border-sand-800/50 dark:hover:bg-brand-500/5">
+            <td class="px-5 py-3 font-mono text-xs text-sand-500 dark:text-sand-400">{{ o.ticket_id }}</td>
+            <td class="px-5 py-3 text-sand-600 dark:text-sand-300 capitalize">{{ o.channel }}</td>
             <td class="px-5 py-3"><span class="sc-badge sc-badge--neutral">{{ o.intent | replace('_', ' ') }}</span></td>
             <td class="px-5 py-3">
               {% if o.escalated %}
@@ -189,10 +188,10 @@
             <td class="px-5 py-3">
               <div class="flex items-center gap-1.5">
                 <div class="sc-meter w-12"><span style="width: {{ (o.confidence * 100) | round(0, 'floor') }}%"></span></div>
-                <span class="text-xs text-slate-500 dark:text-slate-400">{{ '%.2f' % o.confidence }}</span>
+                <span class="text-xs text-sand-500 dark:text-sand-400">{{ '%.2f' % o.confidence }}</span>
               </div>
             </td>
-            <td class="px-5 py-3 text-slate-500 dark:text-slate-400 max-w-xs truncate" title="{{ o.message }}">{{ o.message }}</td>
+            <td class="px-5 py-3 text-sand-500 dark:text-sand-400 max-w-xs truncate" title="{{ o.message }}">{{ o.message }}</td>
           </tr>
           {% endfor %}
         </tbody>
@@ -201,3 +200,4 @@
   </div>
 </section>
 {% endblock %}
+</content>

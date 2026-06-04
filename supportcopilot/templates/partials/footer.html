@@ -1,25 +1,25 @@
-<footer class="mt-16 border-t border-slate-200/70 dark:border-slate-800/70">
+<footer class="mt-16 border-t border-sand-200/70 dark:border-sand-700/60">
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
-    <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-sm text-slate-500 dark:text-slate-400">
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-sm text-sand-500 dark:text-sand-400">
       <div class="flex flex-col gap-1">
-        <p class="font-medium text-slate-600 dark:text-slate-300">
-          Built by <span class="font-semibold text-slate-800 dark:text-slate-100">Laela Zorana</span>
+        <p class="font-semibold text-sand-600 dark:text-sand-300">
+          Built by <span class="font-bold text-sand-800 dark:text-sand-100">Laela Zorana</span>
         </p>
         <p>Northwind Outdoors demo store · vertical-swappable support automation.</p>
       </div>
       <div class="flex flex-wrap items-center gap-3">
         {% if provider %}
-        <span class="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/60 px-2.5 py-1 text-xs font-medium dark:border-slate-800 dark:bg-slate-900/40">
-          <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+        <span class="inline-flex items-center gap-1.5 rounded-full border border-sand-200 bg-sand-50/70 px-2.5 py-1 text-xs font-semibold dark:border-sand-700 dark:bg-sand-800/40">
+          <span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>
           {% if provider == 'stub' %}Offline stub{% else %}{{ provider }}{% endif %}
         </span>
         {% endif %}
         {% if backend %}
-        <span class="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white/60 px-2.5 py-1 text-xs font-medium dark:border-slate-800 dark:bg-slate-900/40">
+        <span class="inline-flex items-center gap-1.5 rounded-full border border-sand-200 bg-sand-50/70 px-2.5 py-1 text-xs font-semibold dark:border-sand-700 dark:bg-sand-800/40">
           Retrieval: {{ backend }}
         </span>
         {% endif %}
-        <a class="font-medium text-brand-600 hover:underline dark:text-brand-400" href="https://github.com/LaelaZorana/ecom-support-copilot" target="_blank" rel="noopener">GitHub</a>
+        <a class="font-semibold text-brand-700 hover:underline dark:text-brand-300" href="https://github.com/LaelaZorana/ecom-support-copilot" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </div>
