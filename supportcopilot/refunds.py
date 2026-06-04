@@ -119,7 +119,7 @@ def decide_refund(
     fee = 0.0 if our_error else RETURN_SHIPPING_FEE
     refund = round(max(order.total - fee, 0.0), 2)
     reason = (
-        "Unused item within the 30-day return window — eligible for a refund to the "
+        "Unused item within the 30-day return window, eligible for a refund to the "
         "original payment method."
     )
     if fee:

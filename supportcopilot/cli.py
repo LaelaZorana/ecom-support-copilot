@@ -26,7 +26,7 @@ def _cmd_ask(args: argparse.Namespace) -> int:
     print(resp.answer)
     if resp.refund:
         print(f"\nRefund decision: {resp.refund.outcome.upper()} "
-              f"(${resp.refund.refund_amount:.2f}) — per {resp.refund.policy_citation}")
+              f"(${resp.refund.refund_amount:.2f}), per {resp.refund.policy_citation}")
     if resp.citations:
         print("\nSources:")
         for c in resp.citations:

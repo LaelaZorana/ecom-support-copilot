@@ -159,7 +159,7 @@ class SupportAgent:
         if not order_id:
             return self._escalate_for_info(
                 "order_status",
-                "I can look that up right away — could you share your order number "
+                "I can look that up right away, could you share your order number "
                 "(it looks like NW-1234)?",
             )
         order = self.orders.get(order_id, email)
@@ -234,7 +234,7 @@ class SupportAgent:
 
         if decision.outcome == "approve":
             answer = (
-                f"Good news — your return for order {order.order_id} is approved. "
+                f"Good news, your return for order {order.order_id} is approved. "
                 f"{decision.reason} You'll be refunded ${decision.refund_amount:.2f} "
                 "to your original payment method within 5 business days once we receive "
                 "the item."
