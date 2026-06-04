@@ -1,6 +1,6 @@
 """Load the seed store data and turn it into retrievable documents.
 
-A :class:`Document` is one citable unit of knowledge — a policy section or a single
+A :class:`Document` is one citable unit of knowledge: a policy section or a single
 product. Keeping products and policy sections as separate documents means the agent
 can cite exactly what it used ("Returns policy", "Ultralight 2-Person Tent").
 """
@@ -43,7 +43,7 @@ def load_policy_documents(policies_path: Path) -> list[Document]:
         if not body:
             continue
         # Repeat the section title so the heading (a strong topical signal) is
-        # weighted into retrieval — e.g. a "shipping" query should land on the
+        # weighted into retrieval, e.g. a "shipping" query should land on the
         # Shipping section, not merely any section that mentions shipping in passing.
         docs.append(
             Document(

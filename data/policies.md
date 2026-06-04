@@ -1,4 +1,4 @@
-# Northwind Outdoors — Customer Policies
+# Northwind Outdoors: Customer Policies
 
 These are the official store policies used by the support team. Each section is a self-contained
 policy document. The support copilot retrieves the relevant section and cites it by heading.

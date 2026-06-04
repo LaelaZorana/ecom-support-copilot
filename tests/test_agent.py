@@ -9,7 +9,7 @@ def test_general_question_is_answered_with_citations(agent):
     assert resp.auto_resolved is True
     assert resp.escalated is False
     assert resp.citations, "expected at least one citation"
-    # Answer should be grounded — mention a concrete shipping fact from the policy.
+    # Answer should be grounded, mention a concrete shipping fact from the policy.
     assert any(tok in resp.answer.lower() for tok in ["business day", "$75", "free", "6.95"])
 
 

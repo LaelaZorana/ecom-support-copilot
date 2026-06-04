@@ -1,4 +1,4 @@
-# Core runtime — everything here installs cleanly and runs fully offline.
+# Core runtime: everything here installs cleanly and runs fully offline.
 fastapi>=0.110,<1.0
 uvicorn[standard]>=0.27,<1.0
 jinja2>=3.1,<4.0

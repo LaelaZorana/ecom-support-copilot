@@ -6,9 +6,9 @@ the customer-facing wording; *this* decides what we will actually do, with the p
 clause that justifies it.
 
 Decision outcomes:
-    approve   — eligible refund, possibly net of a return-shipping fee
-    deny      — not eligible (final sale, worn, outside window, hygiene)
-    escalate  — needs a human (e.g. claimed defect, which requires inspecting a photo)
+    approve   : eligible refund, possibly net of a return-shipping fee
+    deny      : not eligible (final sale, worn, outside window, hygiene)
+    escalate  : needs a human (e.g. claimed defect, which requires inspecting a photo)
 """
 
 from __future__ import annotations
@@ -59,7 +59,7 @@ def decide_refund(
     claims_defect = bool(_DEFECT_TERMS.search(message))
     claims_worn = bool(_WORN_TERMS.search(message))
 
-    # 1) Defect claims go to warranty/human review — we don't auto-approve money on an
+    # 1) Defect claims go to warranty/human review; we don't auto-approve money on an
     #    unverified physical defect; a photo must be inspected.
     if claims_defect:
         return RefundDecision(

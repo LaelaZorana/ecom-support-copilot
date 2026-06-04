@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-# (query, expected document title) — these mirror the seeded support tickets.
+# (query, expected document title): these mirror the seeded support tickets.
 SEED_QUERIES = [
     ("how long does standard shipping take and is it free", "Shipping policy"),
     ("what is your return policy for unused items", "Returns policy"),

@@ -2,7 +2,7 @@
 
 Every number on the dashboard comes from actually running each seeded ticket through
 the real :class:`SupportAgent`. Nothing is hard-coded, so the metrics move if you
-change the policies, catalog, agent logic, or the ticket set — they are *earned*.
+change the policies, catalog, agent logic, or the ticket set. They are *earned*.
 
 Definitions:
     deflection_rate     fraction of tickets auto-resolved without human escalation

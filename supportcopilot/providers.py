@@ -3,7 +3,7 @@
 Every LLM call in the app goes through :class:`LLMProvider`. In production you set
 ``ANTHROPIC_API_KEY`` or ``OPENAI_API_KEY`` and a real model answers. With no key set
 (CI, tests, local demo) the :class:`StubProvider` produces a grounded answer from the
-retrieved context using simple extractive logic — no network, fully reproducible.
+retrieved context using simple extractive logic, no network, fully reproducible.
 
 The stub is intentionally not a toy: it composes a real answer out of the retrieved
 policy/catalog snippets so the end-to-end product (citations, refund decisions,
@@ -76,7 +76,7 @@ class StubProvider:
         # Highest overlap first; then longer (more informative); then earlier source.
         candidates.sort(key=lambda c: (c[0], c[1], c[2]), reverse=True)
         if candidates[0][0] == 0:
-            # No lexical match — surface the most relevant retrieved block rather than
+            # No lexical match. Surface the most relevant retrieved block rather than
             # fabricate. The orchestrator's confidence will be low and it will likely
             # escalate.
             return context[0].strip()
@@ -162,7 +162,7 @@ class SafeProvider:
     """Wrap a real provider so any runtime failure degrades to the offline stub.
 
     A bad API key, rate limit, or network blip on a live call should never 500 a
-    support request — we fall back to a grounded extractive answer instead. The
+    support request, we fall back to a grounded extractive answer instead. The
     reported ``name`` is the wrapped provider's so observability stays accurate.
     """
 

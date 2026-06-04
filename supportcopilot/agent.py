@@ -202,7 +202,7 @@ class SupportAgent:
     ) -> AgentResponse:
         if not order_id:
             # Refund questions with no order id are usually policy questions
-            # ("what's your return policy?") — answer from the KB instead of stalling.
+            # ("what's your return policy?"), answer from the KB instead of stalling.
             return self._handle_general(message, force_intent="refund")
         order = self.orders.get(order_id, email)
         if order is None:

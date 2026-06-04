@@ -1,4 +1,4 @@
-// SupportCopilot — small client helpers (theme toggle, chat UX, examples).
+// SupportCopilot: small client helpers (theme toggle, chat UX, examples).
 (function () {
   "use strict";
 

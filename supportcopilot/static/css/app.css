@@ -1,26 +1,26 @@
-/* SupportCopilot design system — friendly, bright customer-support product.
+/* SupportCopilot design system: friendly, bright customer-support product.
    Warm teal/emerald primary + warm coral accent on a soft "sand" canvas;
    generous rounding, soft shadows, modern chat bubbles. Light + dark.
-   Distinct identity within the portfolio — welcoming like Intercom/Gorgias. */
+   Distinct identity within the portfolio, welcoming like Intercom/Gorgias. */
 
 :root {
-  --sc-accent: 16 185 129;        /* emerald-500 — bright friendly primary  */
-  --sc-accent-strong: 13 148 136; /* teal-600    — deeper primary           */
+  --sc-accent: 16 185 129;        /* emerald-500: bright friendly primary   */
+  --sc-accent-strong: 13 148 136; /* teal-600   : deeper primary            */
   --sc-accent-deep: 15 118 110;   /* teal-700                                */
-  --sc-coral: 244 98 79;          /* warm coral  — energetic accent          */
+  --sc-coral: 244 98 79;          /* warm coral  : energetic accent          */
   --sc-coral-soft: 251 124 114;   /* coral-400                               */
   --sc-success: 16 185 129;       /* emerald-500 */
   --sc-warning: 245 158 11;       /* amber-500   */
   --sc-danger: 239 68 68;         /* red-500     */
 
-  /* Warm neutral surfaces (sand) — replaces cold slate. */
+  /* Warm neutral surfaces (sand), replaces cold slate. */
   --sc-paper: 255 253 250;        /* warm white card                         */
   --sc-line: 231 219 201;         /* sand-200 hairline                       */
   --sc-track: 235 226 212;        /* warm track for meters/bars              */
 }
 
 .dark {
-  --sc-accent: 52 211 153;        /* emerald-400 — lifts in dark             */
+  --sc-accent: 52 211 153;        /* emerald-400: lifts in dark              */
   --sc-accent-strong: 45 212 191; /* teal-400                                */
   --sc-coral: 251 124 114;        /* coral-400                               */
   --sc-paper: 32 27 22;           /* warm dark card                          */
@@ -45,7 +45,7 @@ h1, h2, h3, .sc-display {
   letter-spacing: -0.01em;
 }
 
-/* Soft, warm page wash — coral glow top-right, teal glow bottom-left. */
+/* Soft, warm page wash: coral glow top-right, teal glow bottom-left. */
 .sc-bg {
   background-image:
     radial-gradient(58rem 58rem at 108% -12%, rgb(var(--sc-coral) / 0.12), transparent 55%),
@@ -57,7 +57,7 @@ h1, h2, h3, .sc-display {
     radial-gradient(52rem 52rem at -12% 4%, rgb(var(--sc-accent) / 0.16), transparent 52%);
 }
 
-/* Gradient brand text — teal -> emerald -> coral, warm and friendly. */
+/* Gradient brand text: teal -> emerald -> coral, warm and friendly. */
 .sc-gradient-text {
   background-image: linear-gradient(
     100deg, rgb(var(--sc-accent-strong)), rgb(var(--sc-accent)) 55%, rgb(var(--sc-coral-soft))
@@ -75,7 +75,7 @@ h1, h2, h3, .sc-display {
   background-image: linear-gradient(135deg, rgb(var(--sc-accent)), rgb(var(--sc-coral)));
 }
 
-/* Card — warm, rounded, soft shadow. */
+/* Card: warm, rounded, soft shadow. */
 .sc-card {
   border-radius: 1.35rem;
   border: 1px solid rgb(var(--sc-line));
@@ -99,7 +99,7 @@ h1, h2, h3, .sc-display {
 }
 
 /* ---- Buttons ------------------------------------------------------------ */
-/* Primary "pill" CTA — friendly teal->emerald with a soft glow. */
+/* Primary "pill" CTA: friendly teal->emerald with a soft glow. */
 .sc-btn-primary {
   display: inline-flex; align-items: center; gap: 0.5rem;
   border-radius: 999px;
@@ -113,7 +113,7 @@ h1, h2, h3, .sc-display {
   box-shadow: 0 14px 26px -10px rgb(var(--sc-accent) / 0.8); }
 .sc-btn-primary:active { transform: translateY(0); }
 
-/* Secondary — soft warm outline pill. */
+/* Secondary: soft warm outline pill. */
 .sc-btn-secondary {
   display: inline-flex; align-items: center; gap: 0.5rem;
   border-radius: 999px;
@@ -135,7 +135,7 @@ h1, h2, h3, .sc-display {
   line-height: 1.55;
   font-size: 0.95rem;
 }
-/* Agent bubble (left) — soft warm card with a friendly tail. */
+/* Agent bubble (left): soft warm card with a friendly tail. */
 .sc-bubble--agent {
   border: 1px solid rgb(var(--sc-line));
   background: rgb(var(--sc-paper) / 0.95);
@@ -144,7 +144,7 @@ h1, h2, h3, .sc-display {
 .dark .sc-bubble--agent {
   background: rgb(var(--sc-paper) / 0.9);
 }
-/* User bubble (right) — warm teal->emerald gradient with a tail. */
+/* User bubble (right): warm teal->emerald gradient with a tail. */
 .sc-bubble--user {
   color: white;
   background: linear-gradient(135deg, rgb(var(--sc-accent-strong)), rgb(var(--sc-accent)));
@@ -166,7 +166,7 @@ h1, h2, h3, .sc-display {
   transition: background-color .12s ease, border-color .12s ease;
 }
 .sc-chip-dot { width: 0.42rem; height: 0.42rem; border-radius: 999px; flex: none; }
-/* kind variants — keyed to the source type. */
+/* kind variants: keyed to the source type. */
 .sc-chip--policy {
   color: rgb(var(--sc-accent-deep));
   background: rgb(var(--sc-accent) / 0.14);
