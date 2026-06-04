@@ -1,6 +1,8 @@
 # SupportCopilot
 
-**An AI agent that automates first-line e-commerce customer support and proves the ROI — runs end-to-end with zero paid API keys.**
+**An AI agent that automates first-line e-commerce customer support and proves the ROI — grounded in your own catalog + policies, with a provider-agnostic LLM layer.**
+
+> **Demo note:** the deflection and ROI figures are measured on a seeded 20-ticket eval set; the public demo runs a deterministic stub (add an `ANTHROPIC_API_KEY` / `OPENAI_API_KEY` for a live model).
 
 [![CI](https://github.com/LaelaZorana/ecom-support-copilot/actions/workflows/ci.yml/badge.svg)](https://github.com/LaelaZorana/ecom-support-copilot/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
