@@ -212,7 +212,9 @@ class SupportAgent:
                 "will verify your details and help.",
             )
 
-        decision = decide_refund(order, message=message, today=today)
+        # Fall back to the configured demo reference date (not the wall clock) so the
+        # bundled snapshot's refunds don't "expire" once it ages past the return window.
+        decision = decide_refund(order, message=message, today=today or self.settings.reference_date)
         policy_ctx = self.retriever.search(decision.policy_citation, top_k=1)
         citations = [
             Citation(
