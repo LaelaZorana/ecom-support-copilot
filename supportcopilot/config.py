@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import os
 from dataclasses import dataclass
+from datetime import date
 from pathlib import Path
 
 # Repo root and the seed-data directory. Resolved relative to this file so the app
@@ -33,6 +34,16 @@ class Settings:
     # of answering. Kept conservative on purpose: a wrong refund costs more than a
     # human-handled ticket.
     escalation_threshold: float = float(os.getenv("SUPPORTCOPILOT_ESCALATION_THRESHOLD", "0.12"))
+
+    # The bundled demo orders are a fixed historical snapshot, and refund eligibility
+    # is date-relative (the 30-day return window). Evaluate refunds against the
+    # dataset's own timeframe rather than the wall clock so the offline demo stays
+    # correct indefinitely instead of "expiring" 30 days after the snapshot was taken.
+    # Override with SUPPORTCOPILOT_REFERENCE_DATE=YYYY-MM-DD (or pass an explicit
+    # ``today`` to the agent) to evaluate against a real date.
+    reference_date: date = date.fromisoformat(
+        os.getenv("SUPPORTCOPILOT_REFERENCE_DATE", "2026-06-05")
+    )
 
 
 def get_settings() -> Settings:

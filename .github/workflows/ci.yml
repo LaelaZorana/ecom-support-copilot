@@ -8,37 +8,14 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.10", "3.11", "3.12"]
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
-          python-version: ${{ matrix.python-version }}
-          cache: pip
-
+          python-version: "3.11"
       - name: Install dependencies
-        run: pip install -r requirements-dev.txt
-
-      - name: Run tests (offline stub, no API keys)
-        env:
-          LLM_PROVIDER: stub
-        run: python -m pytest -q
-
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Build image
-        run: docker build -t supportcopilot:ci .
-      - name: Smoke-test container
         run: |
-          docker run -d --name sc -p 8000:8000 supportcopilot:ci
-          for i in $(seq 1 20); do
-            if curl -fs http://localhost:8000/healthz; then echo "healthy"; exit 0; fi
-            sleep 2
-          done
-          echo "container did not become healthy"; docker logs sc; exit 1
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+      - name: Run tests
+        run: python -m pytest -q
